@@ -1,6 +1,7 @@
-Dialog.createNonBlocking("Measure SERT signal in brain slices");
+Dialog.createNonBlocking("Measure SERT signal in brain slices (confocal)");
  
 Dialog.addDirectory("Select your directory ", "/");
+
 
 Dialog.show();
 
@@ -21,16 +22,33 @@ function newImage() {
 
 for (i = 0; i < list.length; i++){	
 	file = input_images + list[i];
-	open(file, 3); SERT = getTitle(); title = replace(SERT, "/Images/", ""); title = split(SERT, "/"); title = replace(title[0], ".tif", "");
+	open(file, 2); SERT = getTitle(); title = replace(SERT, "/Images/", ""); title = split(SERT, "/"); title = replace(title[0], ".tif", "");
 	newImage();
-	setThreshold(450, 65535); // Change this
+	run("Enhance Contrast...", "saturated=0.35");
+	run("Apply LUT");
+	setThreshold(27000, 65535); // Change this
+	
+	run("Create Selection");
+	roiManager("Add");
+	close("*");
+	
+	open(file, 2);
+	newImage();
+	roiManager("Select", 0);
+	run("Make Inverse");
+	run("Subtract...", "value=100000 slice");
+	run("Select None");
+	
+	roiManager("Deselect");
+	roiManager("Delete");
+		
+	setThreshold(1, 65535);
 	run("Measure");
 	setResult("Slice", nResults - 1, title); 
-
+	
 	close("*");
 }
 
-// Save files
-saveAs("Results", masterDir + "/SERT.csv");
+saveAs("Results", masterDir + "/SERT-intensity-area.csv");
 close("Results");
 
