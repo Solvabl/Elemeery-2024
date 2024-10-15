@@ -6,13 +6,13 @@ The project has the following directory structure:
 
 /project-root
 │
-├── /TH DAT.ijm        # ImageJ macro
-├── /Compile csv.py        # Python script to compile results
+├── TH DAT.ijm              # ImageJ macro
+├── Compile csv.py          # Python script to compile results
 │
 └── /Images
-├── image1.oif                # Example image files
-├── image2.oif
-└── ...
+    ├── image1.oif          # Example image files
+    ├── image2.oif
+    └── ...
     
 /analysis: Contains the ImageJ macro and Python script.
 /Images: Contains all image files to be analyzed.
