@@ -37,7 +37,7 @@ The scripts are designed to work in a batch mode to process multiple images effi
 You may adapt the macro and Python script for other analyses by following a similar structure.
 
 **License**
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is licensed under the MIT License.
 
 **Acknowledgments**
 This work is built upon the ImageJ and Python ecosystems. Special thanks to the developers of these platforms for their invaluable tools.
