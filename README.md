@@ -4,7 +4,7 @@ This repository contains scripts for analyzing confocal brain slice images using
 **File Structure**
 The project has the following directory structure:
 
-/project-root
+project-root
 │
 ├── TH DAT.ijm              # ImageJ macro
 ├── Compile csv.py          # Python script to compile results
