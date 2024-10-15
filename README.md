@@ -8,9 +8,6 @@ project-root :
 1.  TH DAT.ijm             # ImageJ 
 2. Compile csv.py          # Python script to compile results
 3. /Images folder containing the .oif or .tif images.
-    
-/analysis: Contains the ImageJ macro and Python script.
-/Images: Contains all image files to be analyzed.
 
 **How to Use**
 Step 1: Image Acquisition
